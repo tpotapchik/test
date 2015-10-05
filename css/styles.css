@@ -2006,6 +2006,18 @@ body {
     height: 21px;
     background: url("../images/sprite.png") no-repeat scroll -76px 0 transparent; }
 
+.paging {
+  text-align: center; }
+  .paging .main-tab-item {
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+    margin: 0 5px;
+    font-size: 14px; }
+    .paging .main-tab-item.selected {
+      font-size: 18px; }
+
 @media print {
   * {
     background: transparent !important;

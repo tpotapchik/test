@@ -188,3 +188,19 @@
 
     }
 }
+
+.paging {
+    text-align: center;
+
+    .main-tab-item {
+        @include inblock;
+        margin: 0 5px;
+
+
+            font-size: 14px;
+
+        &.selected{
+            font-size: 18px;
+        }
+    }
+}
