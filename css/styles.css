@@ -1713,8 +1713,8 @@ body {
   line-height: 22px; }
   .footer .item {
     float: left;
-    margin-left: 150px;
-    width: 230px;
+    margin-left: 5%;
+    width: 30%;
     margin-top: 45px; }
     .footer .item:first-child {
       margin-left: 0; }
@@ -1802,7 +1802,6 @@ body {
     height: 27px; }
 
 .fade {
-  position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
