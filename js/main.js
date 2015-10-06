@@ -10,8 +10,6 @@ $(function () {
     });
 
 
-
-
     $('.slider-content').slick({
             speed: 500,
             fade: true,
@@ -44,113 +42,65 @@ $(function () {
             $tabContent.hide().eq(ind).show();
         }
     });
-
-    $('.large-select').chosen({
-        disable_search: true,
-        inherit_select_classes: true,
-        width: "270px"
+    $('#feedback').click(function (e) {
+        e.preventDefault();
+        showPopup();
     });
+    closePopup();
 
-    $('.medium-select').chosen({
-        disable_search: true,
-        inherit_select_classes: true,
-        width: "150px"
-    });
-    $('.small-select').chosen({
-        disable_search: true,
-        inherit_select_classes: true,
-        width: "75px"
-    });
-    $("#datepicker").datepicker({
-        inline: true
-    });
-    $('.mobile-menu,.fade').click(function () {
-        $('.fade').toggle();
-        $('.navigation').toggle();
-        $('.nav-link').toggleClass('mobile');
-    });
+    function showPopup() {
 
-    $('.question-block').click(function () {
-        var _this = $(this);
-        _this.closest('.question-answer').find('.answer-block').slideToggle(200);
-        _this.toggleClass('opened');
-    });
+        var popup = $('.popup');
+        var maskHeight = $(document).height();
+        var maskWidth = $(window).width();
+        var winH = $(window).height();
+        var winW = $(window).width();
+        popup.css('display', 'block');
 
-    //$(".popup").fancybox({
-    //    'onStart': function () {
-    //        jQuery("html,body").addClass('mobile-underlay');
-    //    },
-    //    'onClosed': function () {
-    //        jQuery("html,body").removeClass('mobile-underlay');
-    //    }
-    //});
+        var popupHeight = popup.height();
+        if (popupHeight == 0) {
+            popupHeight = 505;
+        }
+        popup.css('top', winH / 2 - popupHeight / 2);
+        popup.css('left', winW / 2 - popup.width() / 2);
+        $('.fade').css({'width': maskWidth, 'height': maskHeight}).fadeTo("slow", 0.6);
+    }
 
-
-    //var isShowInPopup = document.body.clientWidth >= 944;
-    //
-    //$(".popup").click(function () {
-    //    if (isShowInPopup) {
-    //        $.fancybox({
-    //            href:'#popup'
-    //        });
-    //    } else {
-    //        var _offset = $('.form-block.popup-registration').offset().top;
-    //        $('body,html').animate({scrollTop: _offset}, 400)
-    //    }
-    //});
-    //
-    $(window).resize(function () {
-        //isShowInPopup = document.body.clientWidth >= 944;
-        //if(!isShowInPopup){
-        //    $.fancybox.close();//закроет любой открытый в текущий момент попап
-        //}
-        resizeReservText();
-    });
-
-
-
-    /*NOT DELETE*/
-    //$('.basket').click(function(){
-    //    $('.main-pic,.main-tab-item-wrapper,.form-column.numbers,.form-column.billing,.order-tab').toggle();
-    //    $('.form-column.check-result').toggle();
-    //});
-
-
-
-
-
-
-
-
-
-
-    function resizeReservText() {
-        var maxHeight = 0;
-        var $item = $('.reservation-item ._description');
-        $item.each(function () {
-            $(this).height('auto');
-            var $h = $(this).height();
-            if ($h > maxHeight) {
-                maxHeight = $h;
-            }
-        });
-        $item.each(function () {
-            var $h = $(this).height();
-            if ($h < maxHeight) {
-                $(this).height(maxHeight);
-            }
+    function closePopup() {
+        $('.fade, .close').click(function () {
+            $('.fade').fadeOut(500);
+            $('div[class*="popup"]').hide();
         });
     }
 
-    $('.main-tab-item.reserv').click(function () {
-        resizeReservText();
-    });
+    //$('.mobile-menu,.fade').click(function () {
+    //    $('.fade').toggle();
+    //    $('.navigation').toggle();
+    //    $('.nav-link').toggleClass('mobile');
+    //});
 
 
-
-
-
-
+    //function resizeReservText() {
+    //    var maxHeight = 0;
+    //    var $item = $('.reservation-item ._description');
+    //    $item.each(function () {
+    //        $(this).height('auto');
+    //        var $h = $(this).height();
+    //        if ($h > maxHeight) {
+    //            maxHeight = $h;
+    //        }
+    //    });
+    //    $item.each(function () {
+    //        var $h = $(this).height();
+    //        if ($h < maxHeight) {
+    //            $(this).height(maxHeight);
+    //        }
+    //    });
+    //}
+    //
+    //$('.main-tab-item.reserv').click(function () {
+    //    resizeReservText();
+    //});
 
 
 });

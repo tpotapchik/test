@@ -2,15 +2,17 @@
     background-color: #dcdcdc;
     height: 230px;
 }
+
 .right-block {
     float: right;
     text-align: right;
 
 }
+
 .logo {
     width: 273px;
     height: 100px;
-    @include bg(0,0,"logo.png");
+    @include bg(0, 0, "logo.png");
     float: left;
     margin-top: 65px;
 
@@ -22,12 +24,14 @@
     }
 
 }
+
 .phone-number {
     font-size: 4em;
     font-family: $pt;
     margin-top: 40px;
     line-height: 40px;
 }
+
 .feedback {
     font-family: 'PTSans Bold', sans-serif;
     font-size: 2.4em;
@@ -46,9 +50,10 @@
 
 .navigation-wrapper {
     background-color: #777777;
-    color:#fff;
+    color: #fff;
     font-size: 3em;
 }
+
 .navigation {
     text-align: center;
 
@@ -58,8 +63,9 @@
         @include inblock;
     }
 }
+
 .nav-link {
-    color:#fff;
+    color: #fff;
     line-height: 80px;
     @include inblock;
 
@@ -67,48 +73,56 @@
         text-decoration: none;
     }
 }
+
 .slider-content {
 
     .slider-item {
-            position: relative;
-            background-position: 50% 50%;
-            background-size: cover;
-            height: 400px;
+        position: relative;
+        background-position: 50% 50%;
+        background-size: cover;
+        height: 400px;
     }
 }
+
 .slick-prev {
     width: 34px;
     height: 61px;
     @include bg();
     margin-top: -32px;
-    left:50%;
+    left: 50%;
     margin-left: -500px;
 
 }
+
 .slick-next {
     width: 34px;
     height: 61px;
-    @include bg(-38px,0);
+    @include bg(-38px, 0);
     margin-top: -32px;
-    right:50%;
+    right: 50%;
     margin-right: -500px;
 }
+
 .breadcrumbs {
     line-height: 30px;
     font-size: 1.4em;
 }
+
 .splitter {
     margin: 0 5px;
 }
+
 .content {
     font-size: 14px;
     margin-top: 20px;
 
 }
+
 .leftblock {
     float: left;
     width: 200px;
 }
+
 .catalog-menu {
     font-size: 18px;
     line-height: 30px;
@@ -137,16 +151,19 @@
         }
     }
 }
+
 .excel {
     margin-top: 100px;
     a {
         text-decoration: none;
     }
 }
+
 .price-list {
     font-size: 30px;
     font-family: 'PTSans Bold', sans-serif;
 }
+
 .catalog-item {
     padding: 20px;
     background-color: #dcdcdc;
@@ -154,7 +171,7 @@
     width: 210px;
     float: left;
     margin-bottom: 20px;
-
+    position: relative;
 
     a {
         text-decoration: none;
@@ -171,19 +188,29 @@
     }
     ._desc {
         margin: 20px 0 50px;
+        max-height: 100px;
+        height: 100px;
+        font-size: 18px;
+        line-height: 20px;
+        overflow: hidden;
 
     }
     .pricing {
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        right: 15px;
+
         ._count {
             font-size: 30px;
             font-family: 'PTSans Bold', sans-serif;
-            color:#444444;
+            color: #444444;
         }
         ._ico {
             margin-top: 8px;
             width: 28px;
             height: 21px;
-            @include bg (-76px,0)
+            @include bg (-76px, 0)
         }
 
     }
@@ -191,16 +218,168 @@
 
 .paging {
     text-align: center;
+    line-height: 20px;
+    margin-top: 10px;
 
     .main-tab-item {
         @include inblock;
         margin: 0 5px;
+        font-size: 14px;
 
-
-            font-size: 14px;
-
-        &.selected{
+        &.selected {
             font-size: 18px;
+            line-height: 22px;
+            color: #444;
         }
     }
+}
+
+.article-block {
+    border-top: 1px solid #777777;
+    margin-top: 65px;
+    padding-top: 30px;
+    margin-bottom: 130px;
+    line-height: 22px;
+
+    ._item {
+        float: left;
+        width: 48%;
+
+        & + ._item {
+            margin-left: 4%;
+        }
+    }
+}
+
+.footer {
+    background-color: #767676;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+
+    .item {
+        float: left;
+        margin-left: 150px;
+        width: 230px;
+        margin-top: 45px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        ._mail {
+            color: #fff;
+            text-decoration: none;
+        }
+        ._develop-ico {
+            padding-left: 48px;
+            position: relative;
+            ._ico {
+                @include icon(36px, 38px, -72px, -23px);
+
+            }
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.footer-mobile {
+    display: none;
+}
+
+.footer-link {
+    color: #fff;
+    display: block;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.popup {
+    padding: 26px 60px;
+    background-color: #fff;
+    width: 466px;
+    position: absolute;
+    //left: 50%;
+    //margin-left: -233px;
+    //top: 20%;
+    z-index: 3;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+
+    ._title {
+        font-size: 24px;
+        font-family: 'PTSans Bold', sans-serif;
+        font-weight: 700;
+        color: #535353;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+
+    }
+
+    .form-row {
+        margin-bottom: 15px;
+        div {
+            line-height: 20px;
+        }
+    }
+    .input {
+        border: 1px solid #c3c3c3;
+        border-radius: 2px;
+        padding: 0 10px;
+        line-height: 40px;
+        height: 40px;
+
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .textarea {
+        border: 1px solid #c3c3c3;
+        border-radius: 2px;
+        padding: 5px 10px;
+        height: 120px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .btn-submit {
+        border: 1px solid #868686;
+        line-height: 40px;
+        padding: 0 17px;
+        box-shadow: none;
+        font-size: 18px;
+        font-family: 'PTSans Bold', sans-serif;
+        background-color: #777777;
+        color: #fff;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+    .close {
+        position: absolute;
+        right: -27px;
+        top:-27px;
+        @include bg(-112px,0);
+        width: 27px;
+        height: 27px;
+    }
+}
+
+.fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    z-index: 2;
+    background: url("../images/fancybox_overlay.png");
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
