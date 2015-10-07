@@ -42,36 +42,33 @@ $(function () {
             $tabContent.hide().eq(ind).show();
         }
     });
-    $('#feedback').click(function (e) {
-        e.preventDefault();
+
+    $('#feedback').click(function () {
         showPopup();
     });
-    closePopup();
 
     function showPopup() {
-
         var popup = $('.popup');
         var maskHeight = $(document).height();
-        var maskWidth = $(window).width();
         var winH = $(window).height();
         var winW = $(window).width();
-        popup.css('display', 'block');
-
         var popupHeight = popup.height();
-        if (popupHeight == 0) {
-            popupHeight = 505;
-        }
-        popup.css('top', winH / 2 - popupHeight / 2);
-        popup.css('left', winW / 2 - popup.width() / 2);
-        $('.fade').css({'width': maskWidth, 'height': maskHeight}).fadeTo("slow", 0.6);
+        var popupWidth = popup.width();
+
+        popup.css({
+            display: 'block',
+            top: winH / 2 - popupHeight / 2 + 17,
+            left: winW / 2 - popupWidth / 2
+        });
+
+        $('.fade').css({width: winW, height: maskHeight}).fadeTo("slow", 0.6);
     }
 
-    function closePopup() {
-        $('.fade, .close').click(function () {
-            $('.fade').fadeOut(500);
-            $('div[class*="popup"]').hide();
-        });
-    }
+    $('.fade, .close').click(function () {
+        $('.fade').fadeOut(500);
+        $('.popup').hide();
+    });
+
 
     //$('.mobile-menu,.fade').click(function () {
     //    $('.fade').toggle();

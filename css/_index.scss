@@ -214,7 +214,7 @@
 
 .paging {
     text-align: center;
-    line-height: 20px;
+    line-height: 22px;
     margin-top: 10px;
 
     .main-tab-item {
@@ -224,7 +224,7 @@
 
         &.selected {
             font-size: 18px;
-            line-height: 22px;
+            line-height: 20px;
             color: #444;
         }
     }
@@ -311,7 +311,6 @@
         color: #535353;
         text-transform: uppercase;
         margin-bottom: 30px;
-
     }
 
     .form-row {
