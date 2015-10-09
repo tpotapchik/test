@@ -63,7 +63,6 @@
     .nav-link {
         font-size: 20px;
     }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -101,8 +100,8 @@
     .nav-link {
         line-height: 30px;
     }
-
 }
+
 @media screen and (max-width: 550px) {
     .logo {
         width: 200px;
@@ -116,7 +115,9 @@
     .feedback {
         font-size: 18px;
     }
-
+    .popup {
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -149,7 +150,6 @@
     .logo {
         width: 70px;
     }
-
 }
 
 
