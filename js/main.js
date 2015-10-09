@@ -9,14 +9,12 @@ $(function () {
         }
     });
 
-
     $('.slider-content').slick({
             speed: 500,
             fade: true,
             cssEase: 'linear',
             autoplay: true,
             autoplaySpeed: 4000
-
         }
     );
 
@@ -54,7 +52,6 @@ $(function () {
         var winW = $(window).width();
         var popupHeight = popup.outerHeight();
         var popupWidth = popup.outerWidth();
-
 
         popup.css({
             display: 'block',
