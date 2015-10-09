@@ -58,8 +58,13 @@
         page-break-after: avoid;
     }
 }
-@media screen and (min-width: 1025px){
+@media screen and (max-width: 980px){
+    .nav-link {
+        font-size: 20px;
+    }
 
+}
+@media screen and (max-width: 768px) {
 
 }
 

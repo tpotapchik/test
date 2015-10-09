@@ -52,12 +52,13 @@ $(function () {
         var maskHeight = $(document).height();
         var winH = $(window).height();
         var winW = $(window).width();
-        var popupHeight = popup.height();
-        var popupWidth = popup.width();
+        var popupHeight = popup.outerHeight();
+        var popupWidth = popup.outerWidth();
+
 
         popup.css({
             display: 'block',
-            top: winH / 2 - popupHeight / 2 + 17,
+            top: winH / 2 - popupHeight / 2 +17,
             left: winW / 2 - popupWidth / 2
         });
 
